@@ -43,10 +43,10 @@ func (s *studentRepository) Delete(id int) error {
 	// TODO: replace this
 	_, err := s.FetchByID(id)
     if err != nil {
-        return err // Return the same error as FetchByID
+        return err 
     }
 
-    // Call Delete() method of db object to delete the student with the given ID
+    
     err = s.db.Delete(&model.Student{}, id).Error
     if err != nil {
         return err
